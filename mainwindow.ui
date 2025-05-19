@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>502</width>
+    <height>322</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>QQDroid Flashing Studio</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="media-flash"/>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Triangular</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>502</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Main menu</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menufastboot">
+    <property name="title">
+     <string>fastboot</string>
+    </property>
+    <widget class="QMenu" name="menureboot">
+     <property name="title">
+      <string>reboot</string>
+     </property>
+     <addaction name="actionsystem"/>
+     <addaction name="actionrecovery"/>
+     <addaction name="actionbootloader"/>
+     <addaction name="actionfastboot"/>
+     <addaction name="separator"/>
+     <addaction name="actionJust_reboot"/>
+     <addaction name="actionWrite_own"/>
+    </widget>
+    <widget class="QMenu" name="menuflashing_2">
+     <property name="title">
+      <string>flashing</string>
+     </property>
+     <addaction name="actionunlock"/>
+     <addaction name="actionlock"/>
+     <addaction name="separator"/>
+     <addaction name="actionunlock_critical"/>
+     <addaction name="actionlock_critical"/>
+     <addaction name="separator"/>
+     <addaction name="actionget_unlock_ability"/>
+    </widget>
+    <widget class="QMenu" name="menugetvar">
+     <property name="title">
+      <string>getvar</string>
+     </property>
+     <addaction name="actionall"/>
+     <addaction name="separator"/>
+     <addaction name="actionWrite_own_2"/>
+    </widget>
+    <addaction name="actionflash"/>
+    <addaction name="separator"/>
+    <addaction name="menuflashing_2"/>
+    <addaction name="menureboot"/>
+    <addaction name="menugetvar"/>
+    <addaction name="separator"/>
+    <addaction name="actiondevices_l"/>
+    <addaction name="actionoem"/>
+    <addaction name="separator"/>
+    <addaction name="action_disable_verification"/>
+    <addaction name="action_disable_verity"/>
+    <addaction name="action_forge"/>
+   </widget>
+   <widget class="QMenu" name="menuheimdall">
+    <property name="title">
+     <string>heimdall</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuPick">
+    <property name="title">
+     <string>Pick...</string>
+    </property>
+    <addaction name="actionPartition_Name"/>
+    <addaction name="actionImage_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionClear_values"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuPick"/>
+   <addaction name="menufastboot"/>
+   <addaction name="menuheimdall"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset theme="application-exit"/>
+   </property>
+   <property name="text">
+    <string>Exit...</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionunlock">
+   <property name="icon">
+    <iconset theme="edit-redo"/>
+   </property>
+   <property name="text">
+    <string>unlock</string>
+   </property>
+  </action>
+  <action name="actionlock">
+   <property name="icon">
+    <iconset theme="edit-undo"/>
+   </property>
+   <property name="text">
+    <string>lock</string>
+   </property>
+  </action>
+  <action name="actionget_unlock_ability">
+   <property name="icon">
+    <iconset theme="dialog-question"/>
+   </property>
+   <property name="text">
+    <string>get_unlock_ability</string>
+   </property>
+  </action>
+  <action name="actionunlock_critical">
+   <property name="icon">
+    <iconset theme="list-add"/>
+   </property>
+   <property name="text">
+    <string>unlock_critical</string>
+   </property>
+  </action>
+  <action name="actionlock_critical">
+   <property name="icon">
+    <iconset theme="list-remove"/>
+   </property>
+   <property name="text">
+    <string>lock_critical</string>
+   </property>
+  </action>
+  <action name="actiondevices_l">
+   <property name="icon">
+    <iconset theme="phone"/>
+   </property>
+   <property name="text">
+    <string>devices -l</string>
+   </property>
+  </action>
+  <action name="actionsystem">
+   <property name="icon">
+    <iconset theme="applications-system"/>
+   </property>
+   <property name="text">
+    <string>system</string>
+   </property>
+  </action>
+  <action name="actionrecovery">
+   <property name="icon">
+    <iconset theme="view-refresh"/>
+   </property>
+   <property name="text">
+    <string>recovery</string>
+   </property>
+  </action>
+  <action name="actionbootloader">
+   <property name="icon">
+    <iconset theme="system-log-out"/>
+   </property>
+   <property name="text">
+    <string>bootloader</string>
+   </property>
+  </action>
+  <action name="actionfastboot">
+   <property name="icon">
+    <iconset theme="emblem-downloads"/>
+   </property>
+   <property name="text">
+    <string>fastboot</string>
+   </property>
+  </action>
+  <action name="actionJust_reboot">
+   <property name="text">
+    <string>Just reboot...</string>
+   </property>
+  </action>
+  <action name="actionWrite_own">
+   <property name="text">
+    <string>Write own...</string>
+   </property>
+  </action>
+  <action name="actionoem">
+   <property name="icon">
+    <iconset theme="preferences-desktop"/>
+   </property>
+   <property name="text">
+    <string>oem</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset theme="accessories-dictionary"/>
+   </property>
+   <property name="text">
+    <string>About...</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::AboutRole</enum>
+   </property>
+  </action>
+  <action name="action_disable_verification">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>--disable-verification</string>
+   </property>
+  </action>
+  <action name="action_disable_verity">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>--disable-verity</string>
+   </property>
+  </action>
+  <action name="action_forge">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>--force</string>
+   </property>
+  </action>
+  <action name="actionall">
+   <property name="text">
+    <string>all</string>
+   </property>
+  </action>
+  <action name="actionWrite_own_2">
+   <property name="text">
+    <string>Write own...</string>
+   </property>
+  </action>
+  <action name="actionflash">
+   <property name="icon">
+    <iconset theme="system-software-install"/>
+   </property>
+   <property name="text">
+    <string>flash</string>
+   </property>
+  </action>
+  <action name="actionImage_File">
+   <property name="icon">
+    <iconset theme="drive-optical"/>
+   </property>
+   <property name="text">
+    <string>Image File...</string>
+   </property>
+  </action>
+  <action name="actionPartition_Name">
+   <property name="icon">
+    <iconset theme="drive-harddisk"/>
+   </property>
+   <property name="text">
+    <string>Partition Name...</string>
+   </property>
+  </action>
+  <action name="actionClear_values">
+   <property name="icon">
+    <iconset theme="emblem-unreadable"/>
+   </property>
+   <property name="text">
+    <string>Clear values</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>161</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

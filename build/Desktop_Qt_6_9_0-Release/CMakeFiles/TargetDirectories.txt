@@ -1,0 +1,9 @@
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/QQDroidFlashingStudio.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/edit_cache.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/rebuild_cache.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/list_install_components.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/install.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/install/local.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/install/strip.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/QQDroidFlashingStudio_autogen_timestamp_deps.dir
+/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/CMakeFiles/QQDroidFlashingStudio_autogen.dir
