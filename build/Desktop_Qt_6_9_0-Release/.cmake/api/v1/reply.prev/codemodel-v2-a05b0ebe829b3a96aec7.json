@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Release-c26260b83a23c12f81ab.json",
+					"jsonFile" : "directory-.-Release-092edba6883cde64ee0e.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "QQDroidFlashingStudio::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-QQDroidFlashingStudio-Release-ef242303999c63743dc6.json",
+					"jsonFile" : "target-QQDroidFlashingStudio-Release-d6281c8210162f8baced.json",
 					"name" : "QQDroidFlashingStudio",
 					"projectIndex" : 0
 				},
