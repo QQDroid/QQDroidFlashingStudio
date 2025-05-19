@@ -46,13 +46,13 @@ void MainWindow::run(std::string cmd){
 
 std::string MainWindow::prompt(){
     Write *dialog = new Write(this);
-    if (dialog->exec() == QDialog::Accepted){return dialog->on_Write_accepted().toStdString();}else{return nullptr;}
+    if (dialog->exec() == QDialog::Accepted){return dialog->on_Write_accepted().toStdString();}else{return "";}
     delete dialog;
 }
 
 void MainWindow::on_actionflash_triggered()
 {
-    if (partitionName.empty() && filePath.empty()){
+    if (partitionName.empty() or filePath.empty()){
         QMessageBox::warning(this,"Warning","Before flashing you must specify partition image file and partition name to flash.");
     }else{
         run("flash "+partitionName+" "+filePath);

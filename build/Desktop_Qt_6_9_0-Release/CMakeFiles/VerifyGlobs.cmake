@@ -45,7 +45,6 @@ set(OLD_GLOB
   "/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/QQDroidFlashingStudio_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/QQDroidFlashingStudio_autogen/EWIEGA46WW/moc_write.cpp"
   "/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/QQDroidFlashingStudio_autogen/mocs_compilation.cpp"
-  "/home/vadim/QQDroidFlashingStudio/commandexecutor.cpp"
   "/home/vadim/QQDroidFlashingStudio/main.cpp"
   "/home/vadim/QQDroidFlashingStudio/mainwindow.cpp"
   "/home/vadim/QQDroidFlashingStudio/write.cpp"
@@ -70,7 +69,6 @@ set(OLD_GLOB
   "/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/QQDroidFlashingStudio_autogen/include/ui_mainwindow.h"
   "/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/QQDroidFlashingStudio_autogen/include/ui_write.h"
   "/home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/QQDroidFlashingStudio_autogen/moc_predefs.h"
-  "/home/vadim/QQDroidFlashingStudio/commandexecutor.h"
   "/home/vadim/QQDroidFlashingStudio/mainwindow.h"
   "/home/vadim/QQDroidFlashingStudio/write.h"
   )
