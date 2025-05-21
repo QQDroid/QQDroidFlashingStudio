@@ -27,7 +27,7 @@ public:
     bool disable_verification;
     bool force;
     std::string partitionName;
-    QString filePath;
+    std::string filePath;
 
 private slots:
     void on_actiondevices_l_triggered();

@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_QQDroidFlashingStudio_FILE /home/vadim/QQDroidFlashingStudio/build/Desktop_Qt_6_9_0-Release/QQDroidFlashingStudio)
-set(__QT_DEPLOY_TARGET_QQDroidFlashingStudio_TYPE EXECUTABLE)

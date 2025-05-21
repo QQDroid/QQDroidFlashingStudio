@@ -16,8 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     bool disable_verity = false;
     bool force = false;
     std::string partitionName = "";
-    QString filePath = "";
-    std::string result;
+    std::string filePath = "";
+    std::string result = "";
     exec("file");
 }
 
@@ -52,10 +52,10 @@ void MainWindow::on_actionPartition_Name_triggered(){partitionName=prompt(true);
 void MainWindow::on_actionImage_File_triggered()
 {
     QString selectedFilter;
-    filePath=QFileDialog::getOpenFileName(this,"Select Android-specified image file","~","Disk Image File [.img] (*.img);;ADB Sideload ZIP [.zip, .apk] (*.zip *.apk);;All Files(*)",&selectedFilter);
-    if (!filePath.isEmpty()){
-        type = QString::fromStdString(exec("file "+filePath.toStdString()));
-        if (type.contains("Android")){partitionName=QFileInfo(filePath).fileName().replace(".img","").toStdString();}
+    filePath=QFileDialog::getOpenFileName(this,"Select Android-specified image file","~","Disk Image File [.img] (*.img);;ADB Sideload ZIP [.zip, .apk] (*.zip *.apk);;All Files(*)",&selectedFilter).toStdString();
+    if (!filePath.empty()){
+        type = QString::fromStdString(exec("file "+filePath));
+        if (type.contains("Android")){partitionName=QFileInfo(QString::fromStdString(filePath)).fileName().replace(".img","").toStdString();}
         else if (selectedFilter=="Disk Image File [.img] (*.img)"){
             if (!QMessageBox::question(this,"Image File","The specified partition image file is not Android-specific. Are you sure?\n\n"+type)){filePath="";}}
         else if (!type.contains("Zip")&&selectedFilter=="ADB Sideload ZIP [.zip, .apk] (*.zip *.apk)"){
@@ -78,10 +78,10 @@ void MainWindow::runFastboot(std::string cmd){
 
 void MainWindow::on_actionflash_triggered()
 {
-    if (partitionName.empty() or filePath.isEmpty()){
+    if (partitionName.empty() or filePath.empty()){
         QMessageBox::warning(this,"Warning","Before flashing you must specify partition image file and partition name to flash.");
     }else{
-        runFastboot("flash "+partitionName+" "+filePath.toStdString());
+        runFastboot("flash "+partitionName+" "+filePath);
     }
 }
 
