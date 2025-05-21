@@ -1,6 +1,5 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -16,15 +15,19 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void run(std::string cmd);
+    std::string exec(const std::string& cmd);
+    std::string result;
+    QString type;
+    void runFastboot(std::string cmd);
+    std::string prompt(bool partitionNam);
     void reboot(std::string to);
-    std::string prompt();
     void flashing(std::string what);
+    void getvar(std::string what);
     bool disable_verity;
     bool disable_verification;
     bool force;
     std::string partitionName;
-    std::string filePath;
+    QString filePath;
 
 private slots:
     void on_actiondevices_l_triggered();
@@ -68,7 +71,9 @@ private slots:
     void on_actionPartition_Name_triggered();
     void on_actionImage_File_triggered();
 
-    void on_actionClear_values_triggered();
+    void on_actionEnable_lock_options_toggled(bool arg1);
+
+    void on_actionWrite_own_3_triggered();
 
 private:
     Ui::MainWindow *ui;

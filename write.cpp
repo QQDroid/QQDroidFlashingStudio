@@ -15,11 +15,5 @@ Write::~Write()
 
 QString Write::on_Write_accepted()
 {
-    QTextEdit *textEdit = this->findChild<QTextEdit*>("textEdit");
-
-    if (textEdit) {
-        return textEdit->toPlainText();
-    } else {
-        return QString();
-    }
+    return ui->textEdit->toPlainText();
 }

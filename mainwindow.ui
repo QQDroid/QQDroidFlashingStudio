@@ -5,11 +5,14 @@
   <property name="windowModality">
    <enum>Qt::WindowModality::ApplicationModal</enum>
   </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>502</width>
+    <width>506</width>
     <height>322</height>
    </rect>
   </property>
@@ -19,14 +22,29 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>506</width>
+    <height>322</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>506</width>
+    <height>322</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>QQDroid Flashing Studio</string>
   </property>
-  <property name="windowIcon">
-   <iconset theme="media-flash"/>
-  </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="windowFilePath">
+   <string notr="true"/>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::InputMethodHint::ImhLowercaseOnly</set>
   </property>
   <property name="documentMode">
    <bool>false</bool>
@@ -41,27 +59,59 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <widget class="QLabel" name="output">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>501</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string notr="true"/>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::TextFormat::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>502</width>
+     <width>506</width>
      <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>Main menu</string>
+     <string>File</string>
     </property>
-    <addaction name="actionAbout"/>
+    <addaction name="actionPartition_Name"/>
+    <addaction name="actionImage_File"/>
     <addaction name="separator"/>
+    <addaction name="actionEnable_lock_options"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menufastboot">
     <property name="title">
-     <string>fastboot</string>
+     <string>Fastboot</string>
     </property>
     <widget class="QMenu" name="menureboot">
      <property name="title">
@@ -107,23 +157,21 @@
     <addaction name="action_disable_verification"/>
     <addaction name="action_disable_verity"/>
     <addaction name="action_forge"/>
+    <addaction name="separator"/>
+    <addaction name="actionWrite_own_3"/>
    </widget>
    <widget class="QMenu" name="menuheimdall">
     <property name="title">
-     <string>heimdall</string>
+     <string>Heimdall</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuPick">
+   <widget class="QMenu" name="menuADB">
     <property name="title">
-     <string>Pick...</string>
+     <string>ADB</string>
     </property>
-    <addaction name="actionPartition_Name"/>
-    <addaction name="actionImage_File"/>
-    <addaction name="separator"/>
-    <addaction name="actionClear_values"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuPick"/>
+   <addaction name="menuADB"/>
    <addaction name="menufastboot"/>
    <addaction name="menuheimdall"/>
   </widget>
@@ -148,6 +196,9 @@
    </property>
   </action>
   <action name="actionlock">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset theme="edit-undo"/>
    </property>
@@ -164,6 +215,9 @@
    </property>
   </action>
   <action name="actionunlock_critical">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset theme="list-add"/>
    </property>
@@ -172,6 +226,9 @@
    </property>
   </action>
   <action name="actionlock_critical">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset theme="list-remove"/>
    </property>
@@ -295,7 +352,7 @@
     <iconset theme="drive-optical"/>
    </property>
    <property name="text">
-    <string>Image File...</string>
+    <string>Select image file...</string>
    </property>
   </action>
   <action name="actionPartition_Name">
@@ -303,7 +360,7 @@
     <iconset theme="drive-harddisk"/>
    </property>
    <property name="text">
-    <string>Partition Name...</string>
+    <string>Select partition...</string>
    </property>
   </action>
   <action name="actionClear_values">
@@ -312,6 +369,19 @@
    </property>
    <property name="text">
     <string>Clear values</string>
+   </property>
+  </action>
+  <action name="actionEnable_lock_options">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enable lock options</string>
+   </property>
+  </action>
+  <action name="actionWrite_own_3">
+   <property name="text">
+    <string>Write own...</string>
    </property>
   </action>
  </widget>

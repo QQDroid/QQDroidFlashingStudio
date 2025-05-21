@@ -15,12 +15,11 @@ class Write : public QDialog
 public:
     explicit Write(QWidget *parent = nullptr);
     ~Write();
+    Ui::Write *ui;
 
 public slots:
     QString on_Write_accepted();
 
-private:
-    Ui::Write *ui;
 };
 
 #endif // WRITE_H

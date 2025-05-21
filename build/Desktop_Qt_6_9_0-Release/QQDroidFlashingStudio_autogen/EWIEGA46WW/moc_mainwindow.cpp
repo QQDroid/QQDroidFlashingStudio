@@ -62,7 +62,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_actionflash_triggered",
         "on_actionPartition_Name_triggered",
         "on_actionImage_File_triggered",
-        "on_actionClear_values_triggered"
+        "on_actionEnable_lock_options_toggled",
+        "on_actionWrite_own_3_triggered"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -114,8 +115,12 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_actionImage_File_triggered'
         QtMocHelpers::SlotData<void()>(23, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_actionClear_values_triggered'
-        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_actionEnable_lock_options_toggled'
+        QtMocHelpers::SlotData<void(bool)>(24, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 18 },
+        }}),
+        // Slot 'on_actionWrite_own_3_triggered'
+        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -160,7 +165,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 18: _t->on_actionflash_triggered(); break;
         case 19: _t->on_actionPartition_Name_triggered(); break;
         case 20: _t->on_actionImage_File_triggered(); break;
-        case 21: _t->on_actionClear_values_triggered(); break;
+        case 21: _t->on_actionEnable_lock_options_toggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 22: _t->on_actionWrite_own_3_triggered(); break;
         default: ;
         }
     }
@@ -185,14 +191,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 22)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 23;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 22)
+        if (_id < 23)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 22;
+        _id -= 23;
     }
     return _id;
 }
