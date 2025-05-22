@@ -37,6 +37,9 @@
   <property name="windowTitle">
    <string>QQDroid Flashing Studio</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="QIcon::ThemeIcon::MediaFlash"/>
+  </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
   </property>
@@ -107,7 +110,7 @@
     <addaction name="actionEnable_lock_options"/>
     <addaction name="separator"/>
     <addaction name="actionAbout"/>
-    <addaction name="actionExit"/>
+    <addaction name="exit"/>
    </widget>
    <widget class="QMenu" name="menufastboot">
     <property name="title">
@@ -129,13 +132,13 @@
      <property name="title">
       <string>flashing</string>
      </property>
-     <addaction name="actionunlock"/>
-     <addaction name="actionlock"/>
+     <addaction name="unlock"/>
+     <addaction name="lock"/>
      <addaction name="separator"/>
-     <addaction name="actionunlock_critical"/>
-     <addaction name="actionlock_critical"/>
+     <addaction name="unlock_critical"/>
+     <addaction name="lock_critical"/>
      <addaction name="separator"/>
-     <addaction name="actionget_unlock_ability"/>
+     <addaction name="get_unlock_ability"/>
     </widget>
     <widget class="QMenu" name="menugetvar">
      <property name="title">
@@ -176,7 +179,7 @@
    <addaction name="menuheimdall"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionExit">
+  <action name="exit">
    <property name="icon">
     <iconset theme="application-exit"/>
    </property>
@@ -187,7 +190,7 @@
     <enum>QAction::MenuRole::QuitRole</enum>
    </property>
   </action>
-  <action name="actionunlock">
+  <action name="unlock">
    <property name="icon">
     <iconset theme="edit-redo"/>
    </property>
@@ -195,7 +198,7 @@
     <string>unlock</string>
    </property>
   </action>
-  <action name="actionlock">
+  <action name="lock">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -206,7 +209,7 @@
     <string>lock</string>
    </property>
   </action>
-  <action name="actionget_unlock_ability">
+  <action name="get_unlock_ability">
    <property name="icon">
     <iconset theme="dialog-question"/>
    </property>
@@ -214,7 +217,7 @@
     <string>get_unlock_ability</string>
    </property>
   </action>
-  <action name="actionunlock_critical">
+  <action name="unlock_critical">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -225,7 +228,7 @@
     <string>unlock_critical</string>
    </property>
   </action>
-  <action name="actionlock_critical">
+  <action name="lock_critical">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -388,7 +391,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>actionExit</sender>
+   <sender>exit</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>

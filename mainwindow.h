@@ -16,6 +16,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     std::string exec(const std::string& cmd);
+    char buffer[128];
     std::string result;
     QString type;
     void runFastboot(std::string cmd);

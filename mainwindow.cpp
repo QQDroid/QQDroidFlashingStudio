@@ -18,26 +18,21 @@ MainWindow::MainWindow(QWidget *parent)
     std::string partitionName = "";
     std::string filePath = "";
     std::string result = "";
-    exec("file");
+    char buffer[128];
 }
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
+MainWindow::~MainWindow(){delete ui;}
 
 
 std::string MainWindow::exec(const std::string& cmd) {
     std::shared_ptr<FILE> pipe(popen(cmd.c_str(), "r"), pclose);
-    if (!pipe) {
-        throw std::runtime_error("popen() failed!");
+    if (!pipe){throw std::runtime_error("popen() failed!");
+    }else {
+        while (fgets(buffer, sizeof(buffer), pipe.get()) != nullptr) {
+            result += buffer;
+        }
+        ui->output->setText(QString::fromStdString(result));
+        return result;
     }
-    char buffer[128];
-    while (fgets(buffer, sizeof(buffer), pipe.get()) != nullptr) {
-        result += buffer;
-    }
-    ui->output->setText(QString::fromStdString(result));
-    return result;
 }
 
 
@@ -63,7 +58,7 @@ void MainWindow::on_actionImage_File_triggered()
         }
     }
 }
-void MainWindow::on_actionEnable_lock_options_toggled(bool a){ui->actionlock->setEnabled(a);ui->actionlock_critical->setEnabled(a);}
+void MainWindow::on_actionEnable_lock_options_toggled(bool a){ui->lock->setEnabled(a);ui->lock_critical->setEnabled(a);}
 
 /* Fastboot */
 void MainWindow::runFastboot(std::string cmd){
@@ -85,6 +80,7 @@ void MainWindow::on_actionflash_triggered()
     }
 }
 
+// Categories
 void MainWindow::reboot(std::string to){runFastboot("reboot "+to);} // 'reboot' category
 void MainWindow::flashing(std::string what){runFastboot("flashing "+what);} // 'flashing' category
 void MainWindow::getvar(std::string what){runFastboot("getvar "+what);} // 'getvar' category

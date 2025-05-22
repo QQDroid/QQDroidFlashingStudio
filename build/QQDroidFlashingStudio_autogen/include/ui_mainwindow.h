@@ -12,6 +12,7 @@
 #include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -25,12 +26,12 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionExit;
-    QAction *actionunlock;
-    QAction *actionlock;
-    QAction *actionget_unlock_ability;
-    QAction *actionunlock_critical;
-    QAction *actionlock_critical;
+    QAction *exit;
+    QAction *unlock;
+    QAction *lock;
+    QAction *get_unlock_ability;
+    QAction *unlock_critical;
+    QAction *lock_critical;
     QAction *actiondevices_l;
     QAction *actionsystem;
     QAction *actionrecovery;
@@ -77,71 +78,73 @@ public:
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(506, 322));
         MainWindow->setMaximumSize(QSize(506, 322));
+        QIcon icon(QIcon::fromTheme(QIcon::ThemeIcon::MediaFlash));
+        MainWindow->setWindowIcon(icon);
         MainWindow->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         MainWindow->setWindowFilePath(QString::fromUtf8(""));
         MainWindow->setInputMethodHints(Qt::InputMethodHint::ImhLowercaseOnly);
         MainWindow->setDocumentMode(false);
         MainWindow->setTabShape(QTabWidget::TabShape::Triangular);
-        actionExit = new QAction(MainWindow);
-        actionExit->setObjectName("actionExit");
-        QIcon icon(QIcon::fromTheme(QString::fromUtf8("application-exit")));
-        actionExit->setIcon(icon);
-        actionExit->setMenuRole(QAction::MenuRole::QuitRole);
-        actionunlock = new QAction(MainWindow);
-        actionunlock->setObjectName("actionunlock");
-        QIcon icon1(QIcon::fromTheme(QString::fromUtf8("edit-redo")));
-        actionunlock->setIcon(icon1);
-        actionlock = new QAction(MainWindow);
-        actionlock->setObjectName("actionlock");
-        actionlock->setEnabled(false);
-        QIcon icon2(QIcon::fromTheme(QString::fromUtf8("edit-undo")));
-        actionlock->setIcon(icon2);
-        actionget_unlock_ability = new QAction(MainWindow);
-        actionget_unlock_ability->setObjectName("actionget_unlock_ability");
-        QIcon icon3(QIcon::fromTheme(QString::fromUtf8("dialog-question")));
-        actionget_unlock_ability->setIcon(icon3);
-        actionunlock_critical = new QAction(MainWindow);
-        actionunlock_critical->setObjectName("actionunlock_critical");
-        actionunlock_critical->setEnabled(true);
-        QIcon icon4(QIcon::fromTheme(QString::fromUtf8("list-add")));
-        actionunlock_critical->setIcon(icon4);
-        actionlock_critical = new QAction(MainWindow);
-        actionlock_critical->setObjectName("actionlock_critical");
-        actionlock_critical->setEnabled(false);
-        QIcon icon5(QIcon::fromTheme(QString::fromUtf8("list-remove")));
-        actionlock_critical->setIcon(icon5);
+        exit = new QAction(MainWindow);
+        exit->setObjectName("exit");
+        QIcon icon1(QIcon::fromTheme(QString::fromUtf8("application-exit")));
+        exit->setIcon(icon1);
+        exit->setMenuRole(QAction::MenuRole::QuitRole);
+        unlock = new QAction(MainWindow);
+        unlock->setObjectName("unlock");
+        QIcon icon2(QIcon::fromTheme(QString::fromUtf8("edit-redo")));
+        unlock->setIcon(icon2);
+        lock = new QAction(MainWindow);
+        lock->setObjectName("lock");
+        lock->setEnabled(false);
+        QIcon icon3(QIcon::fromTheme(QString::fromUtf8("edit-undo")));
+        lock->setIcon(icon3);
+        get_unlock_ability = new QAction(MainWindow);
+        get_unlock_ability->setObjectName("get_unlock_ability");
+        QIcon icon4(QIcon::fromTheme(QString::fromUtf8("dialog-question")));
+        get_unlock_ability->setIcon(icon4);
+        unlock_critical = new QAction(MainWindow);
+        unlock_critical->setObjectName("unlock_critical");
+        unlock_critical->setEnabled(true);
+        QIcon icon5(QIcon::fromTheme(QString::fromUtf8("list-add")));
+        unlock_critical->setIcon(icon5);
+        lock_critical = new QAction(MainWindow);
+        lock_critical->setObjectName("lock_critical");
+        lock_critical->setEnabled(false);
+        QIcon icon6(QIcon::fromTheme(QString::fromUtf8("list-remove")));
+        lock_critical->setIcon(icon6);
         actiondevices_l = new QAction(MainWindow);
         actiondevices_l->setObjectName("actiondevices_l");
-        QIcon icon6(QIcon::fromTheme(QString::fromUtf8("phone")));
-        actiondevices_l->setIcon(icon6);
+        QIcon icon7(QIcon::fromTheme(QString::fromUtf8("phone")));
+        actiondevices_l->setIcon(icon7);
         actionsystem = new QAction(MainWindow);
         actionsystem->setObjectName("actionsystem");
-        QIcon icon7(QIcon::fromTheme(QString::fromUtf8("applications-system")));
-        actionsystem->setIcon(icon7);
+        QIcon icon8(QIcon::fromTheme(QString::fromUtf8("applications-system")));
+        actionsystem->setIcon(icon8);
         actionrecovery = new QAction(MainWindow);
         actionrecovery->setObjectName("actionrecovery");
-        QIcon icon8(QIcon::fromTheme(QString::fromUtf8("view-refresh")));
-        actionrecovery->setIcon(icon8);
+        QIcon icon9(QIcon::fromTheme(QString::fromUtf8("view-refresh")));
+        actionrecovery->setIcon(icon9);
         actionbootloader = new QAction(MainWindow);
         actionbootloader->setObjectName("actionbootloader");
-        QIcon icon9(QIcon::fromTheme(QString::fromUtf8("system-log-out")));
-        actionbootloader->setIcon(icon9);
+        QIcon icon10(QIcon::fromTheme(QString::fromUtf8("system-log-out")));
+        actionbootloader->setIcon(icon10);
         actionfastboot = new QAction(MainWindow);
         actionfastboot->setObjectName("actionfastboot");
-        QIcon icon10(QIcon::fromTheme(QString::fromUtf8("emblem-downloads")));
-        actionfastboot->setIcon(icon10);
+        QIcon icon11(QIcon::fromTheme(QString::fromUtf8("emblem-downloads")));
+        actionfastboot->setIcon(icon11);
         actionJust_reboot = new QAction(MainWindow);
         actionJust_reboot->setObjectName("actionJust_reboot");
         actionWrite_own = new QAction(MainWindow);
         actionWrite_own->setObjectName("actionWrite_own");
         actionoem = new QAction(MainWindow);
         actionoem->setObjectName("actionoem");
-        QIcon icon11(QIcon::fromTheme(QString::fromUtf8("preferences-desktop")));
-        actionoem->setIcon(icon11);
+        QIcon icon12(QIcon::fromTheme(QString::fromUtf8("preferences-desktop")));
+        actionoem->setIcon(icon12);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName("actionAbout");
-        QIcon icon12(QIcon::fromTheme(QString::fromUtf8("accessories-dictionary")));
-        actionAbout->setIcon(icon12);
+        QIcon icon13(QIcon::fromTheme(QString::fromUtf8("accessories-dictionary")));
+        actionAbout->setIcon(icon13);
         actionAbout->setMenuRole(QAction::MenuRole::AboutRole);
         action_disable_verification = new QAction(MainWindow);
         action_disable_verification->setObjectName("action_disable_verification");
@@ -158,20 +161,20 @@ public:
         actionWrite_own_2->setObjectName("actionWrite_own_2");
         actionflash = new QAction(MainWindow);
         actionflash->setObjectName("actionflash");
-        QIcon icon13(QIcon::fromTheme(QString::fromUtf8("system-software-install")));
-        actionflash->setIcon(icon13);
+        QIcon icon14(QIcon::fromTheme(QString::fromUtf8("system-software-install")));
+        actionflash->setIcon(icon14);
         actionImage_File = new QAction(MainWindow);
         actionImage_File->setObjectName("actionImage_File");
-        QIcon icon14(QIcon::fromTheme(QString::fromUtf8("drive-optical")));
-        actionImage_File->setIcon(icon14);
+        QIcon icon15(QIcon::fromTheme(QString::fromUtf8("drive-optical")));
+        actionImage_File->setIcon(icon15);
         actionPartition_Name = new QAction(MainWindow);
         actionPartition_Name->setObjectName("actionPartition_Name");
-        QIcon icon15(QIcon::fromTheme(QString::fromUtf8("drive-harddisk")));
-        actionPartition_Name->setIcon(icon15);
+        QIcon icon16(QIcon::fromTheme(QString::fromUtf8("drive-harddisk")));
+        actionPartition_Name->setIcon(icon16);
         actionClear_values = new QAction(MainWindow);
         actionClear_values->setObjectName("actionClear_values");
-        QIcon icon16(QIcon::fromTheme(QString::fromUtf8("emblem-unreadable")));
-        actionClear_values->setIcon(icon16);
+        QIcon icon17(QIcon::fromTheme(QString::fromUtf8("emblem-unreadable")));
+        actionClear_values->setIcon(icon17);
         actionEnable_lock_options = new QAction(MainWindow);
         actionEnable_lock_options->setObjectName("actionEnable_lock_options");
         actionEnable_lock_options->setCheckable(true);
@@ -223,7 +226,7 @@ public:
         menuFile->addAction(actionEnable_lock_options);
         menuFile->addSeparator();
         menuFile->addAction(actionAbout);
-        menuFile->addAction(actionExit);
+        menuFile->addAction(exit);
         menufastboot->addAction(actionflash);
         menufastboot->addSeparator();
         menufastboot->addAction(menuflashing_2->menuAction());
@@ -245,19 +248,19 @@ public:
         menureboot->addSeparator();
         menureboot->addAction(actionJust_reboot);
         menureboot->addAction(actionWrite_own);
-        menuflashing_2->addAction(actionunlock);
-        menuflashing_2->addAction(actionlock);
+        menuflashing_2->addAction(unlock);
+        menuflashing_2->addAction(lock);
         menuflashing_2->addSeparator();
-        menuflashing_2->addAction(actionunlock_critical);
-        menuflashing_2->addAction(actionlock_critical);
+        menuflashing_2->addAction(unlock_critical);
+        menuflashing_2->addAction(lock_critical);
         menuflashing_2->addSeparator();
-        menuflashing_2->addAction(actionget_unlock_ability);
+        menuflashing_2->addAction(get_unlock_ability);
         menugetvar->addAction(actionall);
         menugetvar->addSeparator();
         menugetvar->addAction(actionWrite_own_2);
 
         retranslateUi(MainWindow);
-        QObject::connect(actionExit, &QAction::triggered, MainWindow, qOverload<>(&QMainWindow::close));
+        QObject::connect(exit, &QAction::triggered, MainWindow, qOverload<>(&QMainWindow::close));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -265,12 +268,12 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "QQDroid Flashing Studio", nullptr));
-        actionExit->setText(QCoreApplication::translate("MainWindow", "Exit...", nullptr));
-        actionunlock->setText(QCoreApplication::translate("MainWindow", "unlock", nullptr));
-        actionlock->setText(QCoreApplication::translate("MainWindow", "lock", nullptr));
-        actionget_unlock_ability->setText(QCoreApplication::translate("MainWindow", "get_unlock_ability", nullptr));
-        actionunlock_critical->setText(QCoreApplication::translate("MainWindow", "unlock_critical", nullptr));
-        actionlock_critical->setText(QCoreApplication::translate("MainWindow", "lock_critical", nullptr));
+        exit->setText(QCoreApplication::translate("MainWindow", "Exit...", nullptr));
+        unlock->setText(QCoreApplication::translate("MainWindow", "unlock", nullptr));
+        lock->setText(QCoreApplication::translate("MainWindow", "lock", nullptr));
+        get_unlock_ability->setText(QCoreApplication::translate("MainWindow", "get_unlock_ability", nullptr));
+        unlock_critical->setText(QCoreApplication::translate("MainWindow", "unlock_critical", nullptr));
+        lock_critical->setText(QCoreApplication::translate("MainWindow", "lock_critical", nullptr));
         actiondevices_l->setText(QCoreApplication::translate("MainWindow", "devices -l", nullptr));
         actionsystem->setText(QCoreApplication::translate("MainWindow", "system", nullptr));
         actionrecovery->setText(QCoreApplication::translate("MainWindow", "recovery", nullptr));
