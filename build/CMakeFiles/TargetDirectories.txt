@@ -1,0 +1,9 @@
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/QQDroidFlashingStudio.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/edit_cache.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/rebuild_cache.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/list_install_components.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/install.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/install/local.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/install/strip.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/QQDroidFlashingStudio_autogen_timestamp_deps.dir
+/home/vadim/Документи/QQDroidFlashingStudio/build/CMakeFiles/QQDroidFlashingStudio_autogen.dir
